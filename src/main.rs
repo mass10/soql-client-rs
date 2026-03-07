@@ -4,8 +4,6 @@ mod query;
 
 use clap::{Parser, Subcommand};
 
-type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
-
 #[derive(Parser)]
 #[command(name = "soql-client", about = "Salesforce SOQL query CLI")]
 struct Cli {
@@ -35,7 +33,7 @@ enum Commands {
 }
 
 #[tokio::main]
-async fn main() -> Result<()> {
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
 	let cli = Cli::parse();
 	let target_org = cli.target_org.as_deref();
 
