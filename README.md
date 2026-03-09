@@ -1,6 +1,6 @@
 # About
 
-A simple SOQL query-er.
+A simple SOQL runner.
 
 # Usage
 
